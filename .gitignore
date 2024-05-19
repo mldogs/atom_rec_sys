@@ -1,0 +1,10 @@
+.idea
+*.pyc
+data/external
+data/raw
+data/processed
+.pytest_cache
+build
+template_ml_prod.egg-info
+dist
+/.ipynb_checkpoints
