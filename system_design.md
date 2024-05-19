@@ -1,6 +1,6 @@
- Описание компонентов системы AI-ассистента
+ # Описание компонентов системы AI-ассистента
 
-![[design_diagram.png]]
+![design_diagram.png](design_diagram.png)
 
 ## 1. **Voice Recognition Module**
 
