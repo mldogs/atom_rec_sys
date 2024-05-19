@@ -1,0 +1,56 @@
+[
+{
+  "type_id": "1",
+  "type_name": "pizza",
+  "parameters": [
+    {
+      "parameter_name": "toppings",
+      "options": ["pepperoni", "mushrooms", "onions", "sausage", "bacon", "extra cheese"]
+    },
+    {
+      "parameter_name": "size",
+      "options": ["small", "medium", "large"]
+    }
+  ]
+},
+{
+  "type_id": "2",
+  "type_name": "movie_tickets",
+  "parameters": [
+    {
+      "parameter_name": "movie_genre",
+      "options": ["action", "comedy", "drama", "horror", "sci-fi"]
+    },
+    {
+      "parameter_name": "date",
+      "options": []
+    },
+    {
+      "parameter_name": "time",
+      "options": ["morning", "afternoon", "evening", "night"]
+    }
+  ]
+},
+{
+  "type_id": "3",
+  "type_name": "baby_products",
+  "parameters": [
+    {
+      "parameter_name": "product_type",
+      "options": ["diapers", "wipes", "formula", "baby food"]
+    },
+    {
+      "parameter_name": "size",
+      "options": ["small", "medium", "large"]
+    },
+    {
+      "parameter_name": "quantity",
+      "options": []
+    },
+    {
+      "parameter_name": "brand",
+      "options": ["Huggies", "Pampers", "Gerber", "Similac"]
+    }
+  ]
+}
+]

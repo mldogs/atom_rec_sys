@@ -1,0 +1,71 @@
+{
+  "scenario_id": "78912",
+  "user_id": "user_004",
+  "scenario_type": "TicketBooking",
+  "steps": [
+    {
+      "step_order": 1,
+      "stage": "define_type",
+      "action": "Collect movie preferences from user",
+      "parameters": {
+        "movie_genre": "action"
+      }
+    },
+    {
+      "step_order": 2,
+      "stage": "collect_parameters",
+      "action": "Collect more details from user",
+      "parameters": {
+        "date": "2023-06-02",
+        "time": "evening"
+      }
+    },
+    {
+      "step_order": 3,
+      "stage": "api_call",
+      "action": "Call external API to find movie options",
+      "api_parameters": {
+        "location": "user_location",
+        "movie_genre": "action",
+        "date": "2023-06-02",
+        "time": "evening"
+      }
+    },
+    {
+      "step_order": 4,
+      "stage": "search_database",
+      "action": "Search internal database for matching showtimes",
+      "parameters": {
+        "movie_genre": "action",
+        "date": "2023-06-02",
+        "time": "evening"
+      }
+    },
+    {
+      "step_order": 5,
+      "stage": "filter_candidates",
+      "action": "Filter and present candidate options to user",
+      "filter_parameters": {
+        "sort_by": "best_seats"
+      }
+    },
+    {
+      "step_order": 6,
+      "stage": "create_order",
+      "action": "Create ticket order based on user selection",
+      "parameters": {
+        "selected_showtime_id": "456"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "order_id": "order125",
+      "order_details": "Two tickets for action movie at 7 PM",
+      "date_time": "2023-06-01T16:00:00Z"
+    }
+  ],
+  "final_status": "completed",
+  "user_feedback": "Excited for the movie"
+}
+

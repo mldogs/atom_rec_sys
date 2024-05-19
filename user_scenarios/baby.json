@@ -1,0 +1,71 @@
+{
+  "scenario_id": "78913",
+  "user_id": "user_005",
+  "scenario_type": "BabyProductOrdering",
+  "steps": [
+    {
+      "step_order": 1,
+      "stage": "define_type",
+      "action": "Collect product type from user",
+      "parameters": {
+        "product_type": "diapers"
+      }
+    },
+    {
+      "step_order": 2,
+      "stage": "collect_parameters",
+      "action": "Collect details from user",
+      "parameters": {
+        "size": "medium",
+        "quantity": 2
+      }
+    },
+    {
+      "step_order": 3,
+      "stage": "api_call",
+      "action": "Call external API to find product options",
+      "api_parameters": {
+        "location": "user_location",
+        "product_type": "diapers",
+        "size": "medium",
+        "quantity": 2
+      }
+    },
+    {
+      "step_order": 4,
+      "stage": "search_database",
+      "action": "Search internal database for matching items",
+      "parameters": {
+        "product_type": "diapers",
+        "size": "medium",
+        "quantity": 2
+      }
+    },
+    {
+      "step_order": 5,
+      "stage": "filter_candidates",
+      "action": "Filter and present candidate options to user",
+      "filter_parameters": {
+        "sort_by": "cheapest",
+        "brand_preference": ["Huggies", "Pampers"]
+      }
+    },
+    {
+      "step_order": 6,
+      "stage": "create_order",
+      "action": "Create order based on user selection",
+      "parameters": {
+        "selected_item_id": "789"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "order_id": "order126",
+      "order_details": "Two packs of medium diapers from Huggies",
+      "date_time": "2023-06-01T16:30:00Z"
+    }
+  ],
+  "final_status": "completed",
+  "user_feedback": "Very convenient"
+}

@@ -1,0 +1,71 @@
+{
+  "scenario_id": "78911",
+  "user_id": "user_003",
+  "scenario_type": "FoodOrdering",
+  "steps": [
+    {
+      "step_order": 1,
+      "stage": "define_type",
+      "action": "Collect food type from user",
+      "parameters": {
+        "food_type": "pizza"
+      }
+    },
+    {
+      "step_order": 2,
+      "stage": "collect_parameters",
+      "action": "Collect details from user",
+      "parameters": {
+        "toppings": ["pepperoni"],
+        "size": "large"
+      }
+    },
+    {
+      "step_order": 3,
+      "stage": "api_call",
+      "action": "Call external API to find food options",
+      "api_parameters": {
+        "location": "user_location",
+        "food_type": "pizza",
+        "toppings": ["pepperoni"],
+        "size": "large"
+      }
+    },
+    {
+      "step_order": 4,
+      "stage": "search_database",
+      "action": "Search internal database for matching items",
+      "parameters": {
+        "food_type": "pizza",
+        "toppings": ["pepperoni"],
+        "size": "large"
+      }
+    },
+    {
+      "step_order": 5,
+      "stage": "filter_candidates",
+      "action": "Filter and present candidate options to user",
+      "filter_parameters": {
+        "exclude_ingredients": ["onions"],
+        "sort_by": "cheapest"
+      }
+    },
+    {
+      "step_order": 6,
+      "stage": "create_order",
+      "action": "Create order based on user selection",
+      "parameters": {
+        "selected_item_id": "124"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "order_id": "order124",
+      "order_details": "One large pepperoni pizza from Pizza Place B",
+      "date_time": "2023-06-01T15:30:00Z"
+    }
+  ],
+  "final_status": "completed",
+  "user_feedback": "Very satisfied"
+}
